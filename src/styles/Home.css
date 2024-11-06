@@ -1,0 +1,99 @@
+/* Reklam Panosu */
+.top-banner-container {
+  width: 100%; /* Reklam panosunun genişliği %100 */
+  height: 150px; /* Reklam panosunun yüksekliği */
+  margin: 0; /* Ortalamak için margin kullanmıyoruz */
+  overflow: hidden; /* Taşan içeriği gizle */
+  object-fit: contain;
+}
+
+.top-banner-image {
+  width: 100%; /* Resim genişliği */
+  height: auto; /* Otomatik yüksekliği */
+}
+
+/* Ürün Listesi */
+.product-list {
+  display: grid; /* Flex yerine grid kullanarak daha düzgün yerleşim */
+  grid-template-columns: 1fr; /* Her satırda tek ürün */
+  gap: 30px; /* Ürünler arası boşluğu artır */
+  justify-items: center; /* Kartları ortala */
+}
+
+/* Ürün Kartı */
+.product-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd; /* Kart kenarını hafif belirgin yap */
+  border-radius: 12px; /* Kenarları daha yuvarlak */
+  max-width: 500px; /* Kartın genişliğini biraz küçült */
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  background-color: #fff; /* Arka plan rengi beyaz */
+  transition: transform 0.3s ease; /* Hover'da animasyon */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Hover'da yukarı kaldır */
+}
+
+/* Ürün Görseli */
+.product-image {
+  flex-basis: 30%;
+  width: 70px; /* Daha küçük resim boyutu */
+  height: 70px;
+  object-fit: contain!important; /* Görseli kırpmadan sığdır */
+  margin-right: 15px; /* Görsel ve metin arasında daha fazla boşluk */
+}
+
+/* Ürün Bilgileri (Başlık ve Fiyat) */
+.product-details {
+  flex: 1; /* Sağ tarafta kalan boşluğu tamamen kaplasın */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title {
+  font-size: 1.1rem; /* Başlık boyutunu biraz büyüt */
+  margin: 0 0 8px 0;
+  color: #333; /* Başlık rengini koyu yap */
+}
+
+.product-price {
+  font-size: 0.95rem; /* Fiyat boyutunu büyüt */
+  color: #28a745; /* Fiyat rengi yeşil */
+  font-weight: bold; /* Fiyat kalın */
+}
+
+/* Ürün Linki */
+.product-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold; /* Link kalın */
+  margin-top: 8px;
+}
+
+.product-link:hover {
+  color: #0056b3; /* Hover'da renk değişikliği */
+  text-decoration: underline; /* Hover'da altı çizili */
+}
+
+/* Sepete Ekle Butonu */
+.add-to-cart-button {
+  margin-top: 10px; /* Ürün detaylarının altına boşluk */
+  background-color: #28a745; /* Buton için yeşil arka plan */
+  color: #fff; /* Buton metni beyaz */
+  font-weight: bold; /* Buton metni kalın */
+  padding: 8px 16px; /* İç boşluklar */
+  border: none; /* Butonun kenarlığını kaldır */
+  border-radius: 8px; /* Butonun kenarlarını yuvarlat */
+  cursor: pointer; /* Hover'da imleç işaretçisi */
+  transition: background-color 0.3s ease; /* Arka plan rengi animasyonu */
+}
+
+.add-to-cart-button:hover {
+  background-color: #218838; /* Hover'da koyu yeşil */
+}

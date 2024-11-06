@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Tüm elementler ve pseudo-elementler için border-box davranışı */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Tüm sayfanın yüksekliğini %100 yap ve margin/padding sıfırla */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Genel font ayarı, isteğe bağlı */
+}
+
+/* Flex yapısıyla tüm sayfayı kapsayan ana layout */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sayfanın tam yüksekliği kadar olacak */
+}
+
+.content {
+  flex: 1; /* İçerik alanı esneyebilir (footer alta sabitlenir) */
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.main-search-container {
+  flex: 1;
+  margin: 0 20px;
+  max-width: 400px;
+}
+
+
+.page-link-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 50px; /* Butonlar arasına boşluk ekliyor */
+}
+
+.page-link-button:last-child {
+  margin-right: 0; /* Son butonda sağ boşluğu kaldır */
+}
+
+.page-link-button:hover {
+  background-color: #0056b3;
+}
+
+
+.icon-container {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-favorite ,.icon-grocery {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease; /* Animasyon efekti ekleme */
+}
+
+/* Hover efekti */
+.icon-favorite:hover ,.icon-grocery:hover{
+  color: pink;
+  transform: scale(1.1);
+}
+
+
+h2.welcome-application {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
 }
